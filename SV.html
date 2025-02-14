@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <link rel="stylesheet" href="SV.css">
+    <script>
+        // Función para generar un código de descuento aleatorio de 9 caracteres
+        function generarCodigoDescuento() {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let codigo = '';
+            for (let i = 0; i < 9; i++) {
+                const aleatorio = Math.floor(Math.random() * caracteres.length);
+                codigo += caracteres.charAt(aleatorio);
+            }
+            return codigo;
+        }
+
+        // Función para mostrar el código de descuento en una ventana emergente
+        function mostrarDescuento() {
+            const codigo = generarCodigoDescuento();
+            alert("Tu código de descuento es: " + codigo);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">San Valentín</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="bienvenida">
+        <h1>San Valentín</h1>
+        <p>
+            El amor comienza con una sonrisa, y qué mejor manera de celebrarlo que cuidándola.  
+            Así como el amor necesita atención y dedicación, nuestra sonrisa también merece cuidados para brillar con luz propia.  
+            Cada risa compartida, cada beso y cada palabra de cariño se hacen más especiales cuando los dientes están sanos y radiantes.  
+            Este San Valentín, regala amor y salud bucal, porque una sonrisa bien cuidada es el reflejo más hermoso del amor verdadero.
+        </p>
+        <a class="boton" href="#" onclick="mostrarDescuento()">Obten un descuento de un 30%</a>
+    </section>
+    
+
+    <footer>
+        <div class="footer-links">
+            <a href="contacto.html">Contacto</a>
+            <a href="soporte.html">Soporte</a>
+        </div>
+        <div class="social-icons">
+            <img src="icons8-facebook-48.png" alt="Facebook">
+            <img src="icons8-twitterx-50.png" alt="Twitter">
+            <img src="icons8-youtube-50.png" alt="Youtube">
+        </div>
+        <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

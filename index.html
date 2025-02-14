@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victoria CC</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function generarCodigoDescuento() {
+            const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let codigo = '';
+            for (let i = 0; i < 9; i++) {
+                const aleatorio = Math.floor(Math.random() * caracteres.length);
+                codigo += caracteres.charAt(aleatorio);
+            }
+            return codigo;
+        }
+
+        function mostrarCodigo() {
+            const codigo = generarCodigoDescuento();
+            alert("Tu código de descuento es: " + codigo);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="SV.html">San Valentín</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="bienvenida">
+        <div class="contenedor-bienvenida">
+            <img src="Screenshot_2025-02-02-20-08-38-342.jpeg" alt="Dra. Victoria Carranza" class="imagen-circular">
+            <div class="texto-bienvenida">
+                <h1>¡Tu sonrisa, nuestra pasión!</h1>
+                <p>Desde pequeña, la Dra. Victoria Carranza soñaba con cuidar sonrisas. <br> 
+                   Hoy lo hace realidad con dedicación y amor por su profesión.</p>
+                <a class="boton" href="contacto.html">Coger Cita</a>
+            </div>
+        </div>
+    </section>
+    
+
+    <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Limpieza Dental</h3>
+                <p>Mantén tu sonrisa brillante y saludable con limpiezas profesionales.</p>
+            </div>
+            <div class="card">
+                <h3>Ortodoncia</h3>
+                <p>Mejoramos la alineación de tus dientes con la última tecnología en ortodoncia.</p>
+            </div>
+            <div class="card">
+                <h3>Implantes Dentales</h3>
+                <p>Recupera la funcionalidad y estética de tu sonrisa con implantes de alta calidad.</p>
+            </div>
+        </div>
+    </div>
+   <h1 class="descuentosh1">Descuentos</h1>
+
+    <section class="descuentos">
+        <div class="descuento-card">
+            <h3>Descuento Familia Numerosa</h3>
+            <p>Hasta <span>50%</span> de descuento</p>
+            <button onclick="mostrarCodigo()">Ver Oferta</button>
+        </div>
+        <div class="descuento-card">
+            <h3>San Valentín</h3>
+            <p>Hasta <span>30%</span> de descuento</p>
+            <button onclick="mostrarCodigo()">Ver Oferta</button>
+        </div>
+        <div class="descuento-card">
+            <h3>Minusvalidos</h3>
+            <p>Hasta <span>40%</span> de descuento</p>
+            <button onclick="mostrarCodigo()">Ver Oferta</button>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer-links">
+            <a href="contacto.html">Contacto</a>
+            <a href="soporte.html">Soporte</a>
+        </div>
+        <div class="social-icons">
+            <img src="icons8-facebook-48.png" alt="Facebook">
+            <img src="icons8-twitterx-50.png" alt="Twitter">
+            <img src="icons8-youtube-50.png" alt="Youtube">
+        </div>
+        <p>&copy; 2025 Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
