@@ -5,9 +5,16 @@ document.getElementById("cita-form").addEventListener("submit", function(event) 
     let email = document.getElementById("email").value.trim();
     let telefono = document.getElementById("telefono").value.trim();
     let fecha = document.getElementById("fecha").value;
+    let password = document.getElementById("password").value.trim();
 
-    if (nombre === "" || email === "" || telefono === "" || fecha === "") {
+    if (nombre === "" || email === "" || telefono === "" || fecha === "" || password === "") {
         document.getElementById("mensaje").textContent = "Por favor, completa todos los campos.";
+        document.getElementById("mensaje").style.color = "red";
+        return;
+    }
+
+    if (password.length < 6) {
+        document.getElementById("mensaje").textContent = "La contraseña debe tener al menos 6 caracteres.";
         document.getElementById("mensaje").style.color = "red";
         return;
     }
