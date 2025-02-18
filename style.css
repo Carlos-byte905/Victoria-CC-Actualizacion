@@ -7,30 +7,34 @@ body{
     flex-direction: column;
     height: 100%;
 }
-header{
-    margin: 15px;
+header {
     padding: 10px 0;
-    text-align: center;
 }
-header img{
-    margin-right: 10px;
-}
-header ul{
+
+header nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    text-align: center; /* Centra el contenido del nav */
 }
-header ul li{
-    display: inline;
-    margin-right: 10px;
+
+header nav ul li {
+    display: inline-block; /* Mantiene los elementos en línea */
+    margin-right: 20px; /* Ajusta el espaciado entre los elementos */
 }
-header ul li a{
+
+header nav ul li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+header nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     font-size: 1.2em;
 }
-header ul li a:hover{
+
+header nav ul li a:hover {
     color: #ff00c8;
 }
 
