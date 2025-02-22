@@ -32,18 +32,10 @@
             font-size: 18px;
             margin: 10px 0 20px;
         }
-        .loader {
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #007bff;
-            border-radius: 50%;
-            width: 80px;
-            height: 80px;
-            animation: spin 1.5s linear infinite;
-            margin: 20px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        #countdown {
+            font-size: 24px;
+            color: #d9534f;
+            margin: 20px 0;
         }
         footer {
             margin-top: 20px;
@@ -55,7 +47,7 @@
 <body>
     <div class="container">
         <h1>¡Volvemos Pronto!</h1>
-        <div class="loader"></div>
+        <div id="countdown"></div>
         <p>Estamos realizando tareas de mantenimiento para mejorar tu experiencia. Gracias por tu paciencia.</p>
         <footer id="timeMessage"></footer>
     </div>
@@ -74,6 +66,29 @@
         }
 
         footer.textContent = message;
+
+        // Configurar contador de 48 horas
+        const countdownElement = document.getElementById('countdown');
+        const endTime = new Date(new Date().getTime() + 48 * 60 * 60 * 1000);
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = endTime - now;
+
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `Tiempo restante: ${hours}h ${minutes}m ${seconds}s`;
+
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.textContent = '¡El mantenimiento ha finalizado!';
+            }
+        }
+
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown();
     </script>
 </body>
 </html>
